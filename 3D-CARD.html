@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: rgb(125, 86, 86);
+        }
+
+img{
+    width: 100px;
+    height: 150px;
+    border: 1px solid beige;
+    cursor: pointer;
+    background-color: black;
+}
+
+.list{
+    display: flex;
+    gap: 10px;
+}
+
+.list{
+    transform-style: preserve-3d;
+    transform: perspective(1100px);
+}
+.list .items{
+    transition: all 0.5s ease;
+    filter: brightness(0);
+}
+
+.list .items:hover{
+    filter: brightness(1);
+    transform: translateZ(200px);
+}
+
+/* .list .items:hover + .items{
+    filter: brightness(0.6);
+    transform: translateZ(200px) rotateY(40deg);
+} */
+
+.list .items:hover + * {
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(40deg);
+}
+
+.list .items:hover + * + *{
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(20deg);
+}
+
+.list .items:hover + * + * + *{
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(10deg);
+}
+
+.list .items:has(+ *:hover){
+    filter: brightness(0.6);
+    transform: translateZ(150px) rotateY(-40deg);
+}
+.list .items:has(+ * + *:hover){
+    filter: brightness(0.4);
+    transform: translateZ(70px) rotateY(-20deg);
+}
+.list .items:has(+ * + * + *:hover){
+    filter: brightness(0.2);
+    transform: translateZ(30px) rotateY(-10deg);
+}
+
+
+    </style>
+</head>
+<body>
+
+
+   
+    <main>
+        <div class="list">
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5e98bc5a5115f80004b9b2c5.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5e98bd145115f80004b9b2cd.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/6092d5f1e4801d000467a0d1.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5e98b6d55115f80004b9b29d.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5af2afef6554160a79bea01f.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5af2b0226554160a79bea026.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5af2affe6554160a79bea021.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5af2afe06554160a79bea01d.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5c62c339e4b8dd029ff25b22.png" alt=""></div>
+            <div class="items"><img class="iimg" src="https://assets.stickpng.com/thumbs/5c62c333e4b8dd029ff25b21.png" alt=""></div>
+        </div>
+    </main>
+    
+</body>
+</html>
